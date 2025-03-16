@@ -1,2 +1,1 @@
-# 3ma-to-obj-converter
- 
+# 3ma to obj converter
