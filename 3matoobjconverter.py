@@ -1,6 +1,8 @@
 import json
 import os
 
+# V1.0
+
 # change the file type of the 3ma file to json and load it as json
 
 def start():
