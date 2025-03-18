@@ -6,29 +6,31 @@ import os
 def start():
     global skript_dir
     skript_dir = os.path.dirname(os.path.abspath(__file__))
-    print(" Folder path:", skript_dir)
-    find_files()
-    choice = input("Press Enter to convert again. 0 to exit")
+    print("Folder path:", skript_dir)
+    choice = input("Press Enter to convert 3ma ot obj. 0 to exit. L to see the LICENSE")
     if choice == '0':
         pass
+    elif choice == 'L':
+        print("This script is licensed under Apache License 2.0 by Shadowdara.")
     else:
         start()
+    find_files()
 
 def find_files():
-    global dreima_files, script_dir
+    global dreima_files
     files = os.listdir(skript_dir)
     dreima_files = [f for f in files if f.endswith(".3ma")]
+    convert()
 
 def convert():
-    for i in range (0, (len(dreima_files) - 1)):
-        thisfile = os.path.join(script_dir, dreima_files[i])
+    for i in range (0, len(dreima_files)):
+        thisfile = os.path.join(skript_dir, dreima_files[i])
 
         file_3ma = open(thisfile)
         fjile_3ma = json.loads(file_3ma.read())
 
         base_name, _ = os.path.splitext(thisfile)
-        obj_file = os.path.join(script_dir, f"{base_name}.obj")
-        obj_file = open(obj_file, "wt")
+        obj_file = open(f"{base_name}.obj", "wt")
 
         vertex_index = 0
         prev_vertex_index = vertex_index
