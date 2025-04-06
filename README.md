@@ -13,4 +13,3 @@
 
 In the folder named test are some 3ma files for testing, drag them in the same folder as the python file and then run the script!
 
-- btw idk why it says `Roff`
