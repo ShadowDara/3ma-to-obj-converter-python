@@ -9,14 +9,20 @@ def start():
     global skript_dir
     skript_dir = os.path.dirname(os.path.abspath(__file__))
     print("Folder path:", skript_dir)
-    choice = input("Press Enter to convert 3ma ot obj. 0 to exit. L to see the LICENSE")
+
+    choice = input("\nPress Enter to convert 3ma ot obj. 0 to exit. L to see the LICENSE: ")
+
     if choice == '0':
         pass
+
     elif choice == 'L':
         print("This script is licensed under Apache License 2.0 by Shadowdara.")
+
+    elif choice == '':
+        find_files()
+
     else:
         start()
-    find_files()
 
 def find_files():
     global dreima_files
@@ -59,14 +65,22 @@ def convert():
 
             UnivertsList = meshes[msh]["facesUnivertsList"]
             obj_file.write("\ng name" + str(msh) + " \n")
+
             for fcx in UnivertsList:
                 obj_file.write("f")
+
                 for fcx_ndx in fcx["u"]:
                     obj_file.write(" " + str(fcx_ndx + 1 + (forward * prev_vertex_index)))
+
                 obj_file.write("\n")
+
         file_3ma.close()
         obj_file.close()
-    print(f"Coverted {i+1} Files successfully!")
 
-if __name__ == '__main__':
-    start()
+    try:
+        print(f"\nCoverted {i+1} Files successfully!")
+    
+    except:
+        print("\nConverted no files!")
+
+start()
