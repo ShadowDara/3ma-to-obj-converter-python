@@ -3,7 +3,7 @@
 3d modeling app 3ma to obj converter
 
 ## Download V1.0
-- [Python Script](https://github.com/ShadowDara/3ma-to-obj-converter-python/releases/tag/V1.0)
+- [Python Script](https://github.com/weuritz8u/3ma-to-obj-converter-python/releases/tag/main)
 
 ## HOW TO USE:
     
