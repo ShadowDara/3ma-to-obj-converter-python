@@ -1,11 +1,14 @@
 import json
 import os
 
-# V1.0
+# V1.3
 
 # change the file type of the 3ma file to json and load it as json
 
 def start():
+
+    # make path new
+
     global skript_dir
     skript_dir = os.path.dirname(os.path.abspath(__file__))
     print("Folder path:", skript_dir)
@@ -83,4 +86,5 @@ def convert():
     except:
         print("\nConverted no files!")
 
-start()
+if __name__ == '__main__':
+    start()
